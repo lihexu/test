@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style2.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link href="../css/jquery-ui.css" rel="stylesheet">
+    <script src="../js/jquery.min.js"></script>    
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/jquery.ztree.all.min.js"></script>
+</head>
+<style>
+    html,body{
+        height: auto;
+    }
+    body{
+        min-width: auto;
+    }
+    .select-box{
+        width:230px;
+    }
+    .input-box{
+        width:260px;
+    }
+    .intro-span{
+        line-height:36px;
+    }
+    .range-span{
+        width:60px!important;
+        text-align:left!important;
+    }
+    .select-box .input-row span.fl{
+        color:#333;
+    }
+    #isDelete p{
+        padding: 40px 0 20px;
+        font-size: 18px;
+        color: #333;
+        text-align: center;
+    }
+    .textarea-div{
+        padding:10px;
+        border:1px solid #e5e5e5;
+    }
+    .textarea-div textarea{
+        height:50px;
+        resize:none;
+    }
+</style>
+<body>
+    <div class="public-script script-list">
+        <div class="public-script-ops">
+            <button class="fl active my-script">我的公共脚本</button>
+            <button class="fl dep-script">部门公共脚本</button>
+            <button class="addPublicScript fr" onclick="addPublicScript()">制作公共脚本</button>
+        </div>
+        <div class="table-div">
+            <table cellpadding='0' cellspacing='0' border="0" width='100%' class="scriptTable">
+                <tr>
+                    <th style="padding:0 3px;" width="5%"><label><input type="checkbox"><span></span></label></th>
+                    <th width="10%">脚本名称</th>
+                    <th width="10%">创建者</th>
+                    <th width="15%">UI录制</th>            
+                    <th>参数</th>
+                    <th>被引用关系</th>
+                    <th>说明</th>
+                    <th width="10%">操作</th>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox"><span></span></label></td>
+                    <td>登录页面</td>
+                    <td>test</td>
+                    <td><span class="table-rec-btn">录制</span></td>            
+                    <td><p>name:liuxh,password:admin, na</p></td>
+                    <td>admin</td>
+                    <td><p>说明文字说明</p></td>
+                    <td class="operate">
+                        <span class="edit" title="编辑" onclick="scriptSet()"></span>
+                        <span class="delete" title="删除" onclick="isDelete()"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox"><span></span></label></td>
+                    <td>登录页面</td>
+                    <td>test</td>
+                    <td><span class="rec-btn-edit">编辑</span><span class="rec-btn-back">回放</span></td>
+                    <td><p>name:liuxh,password:admin, name</p></td>
+                    <td>admin</td>
+                    <td><p>说明文字说明文字说明文字说明文字说明</p></td>
+                    <td class="operate">
+                        <span class="edit" title="编辑" onclick="scriptSet()"></span>
+                        <span class="delete" title="删除" onclick="isDelete()"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox"><span></span></label></td>
+                    <td>登录页面</td>
+                    <td>test</td>
+                    <td><span class="table-rec-btn">录制</span></td>            
+                    <td><p>name:liuxh,password:admin, na</p></td>
+                    <td>admin</td>
+                    <td><p>说明文字说明</p></td>
+                    <td class="operate">
+                        <span class="edit" title="编辑" onclick="scriptSet()"></span>
+                        <span class="delete" title="删除" onclick="isDelete()"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox"><span></span></label></td>
+                    <td>登录页面</td>
+                    <td>test</td>
+                    <td><span class="rec-btn-edit">编辑</span><span class="rec-btn-back">回放</span></td>
+                    <td><p>name:liuxh,password:admin, name</p></td>
+                    <td>admin</td>
+                    <td><p>说明文字说明文字说明文字说明文字说明</p></td>
+                    <td class="operate">
+                        <span class="edit" title="编辑" onclick="scriptSet()"></span>
+                        <span class="delete" title="删除" onclick="isDelete()"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox"><span></span></label></td>
+                    <td>登录页面</td>
+                    <td>test</td>
+                    <td><span class="rec-btn-edit">编辑</span><span class="rec-btn-back">回放</span></td>
+                    <td><p>name:liuxh,password:admin, name</p></td>
+                    <td>admin</td>
+                    <td><p>说明文字说明文字说明文字说明文字说明</p></td>
+                    <td class="operate">
+                        <span class="edit" title="编辑" onclick="scriptSet()"></span>
+                        <span class="delete" title="删除" onclick="isDelete()"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox"><span></span></label></td>
+                    <td>登录页面</td>
+                    <td>test</td>
+                    <td><span class="rec-btn-edit">编辑</span><span class="rec-btn-back">回放</span></td>
+                    <td><p>name:liuxh,password:admin, name</p></td>
+                    <td>admin</td>
+                    <td><p>说明文字说明文字说明文字说明文字说明</p></td>
+                    <td class="operate">
+                        <span class="edit" title="编辑" onclick="scriptSet()"></span>
+                        <span class="delete" title="删除" onclick="isDelete()"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox"><span></span></label></td>
+                    <td>登录页面</td>
+                    <td>test</td>
+                    <td><span class="rec-btn-edit">编辑</span><span class="rec-btn-back">回放</span></td>
+                    <td><p>name:liuxh,password:admin, name</p></td>
+                    <td>admin</td>
+                    <td><p>说明文字说明文字说明文字说明文字说明</p></td>
+                    <td class="operate">
+                        <span class="edit" title="编辑" onclick="scriptSet()"></span>
+                        <span class="delete" title="删除" onclick="isDelete()"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox"><span></span></label></td>
+                    <td>登录页面</td>
+                    <td>test</td>
+                    <td><span class="rec-btn-edit">编辑</span><span class="rec-btn-back">回放</span></td>
+                    <td><p>name:liuxh,password:admin, name</p></td>
+                    <td>admin</td>
+                    <td><p>说明文字说明文字说明文字说明文字说明</p></td>
+                    <td class="operate">
+                        <span class="edit" title="编辑" onclick="scriptSet()"></span>
+                        <span class="delete" title="删除" onclick="isDelete()"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox"><span></span></label></td>
+                    <td>登录页面</td>
+                    <td>test</td>
+                    <td><span class="rec-btn-edit">编辑</span><span class="rec-btn-back">回放</span></td>
+                    <td><p>name:liuxh,password:admin, name</p></td>
+                    <td>admin</td>
+                    <td><p>说明文字说明文字说明文字说明文字说明</p></td>
+                    <td class="operate">
+                        <span class="edit" title="编辑" onclick="scriptSet()"></span>
+                        <span class="delete" title="删除" onclick="isDelete()"></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="changeScriptType" class="changeScriptType" title="确认">
+       <p>转换为普通脚本？</p>
+    </div>
+
+    <div id="addPublicScript" class="scriptSet" title="下述设置将会在引用脚本中生效，请确认后再提交保存">
+        <div class="scriptSet clearfix">
+            
+            <div class="fl select-box">
+                <div class="input-row">
+                    <span class="fl">原脚本分组</span>
+                    <div>
+                        <select>
+                            <option value="">需求确认</option>
+                            <option value="0">需求确认111</option>
+                            <option value="1">需求确认222</option>
+                            <option value="2">需求确认333</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <table cellpadding='0' cellspacing='0' border="0" width='100%' class="selectTable">
+                        <tr>
+                            <!-- <th style="padding:0 3px;"><label><input type="checkbox"><span></span></label></th> -->
+                            <td>选择</td>
+                            <td>脚本名</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="scriptSetInput selectInput">
+                                    <div class="radio-box">
+                                        <label class="nobg-label">
+                                            <input type="radio" name="script">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>确认</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="scriptSetInput selectInput">
+                                    <div class="radio-box">
+                                        <label class="nobg-label">
+                                            <input type="radio" name="script">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>录制</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="scriptSetInput selectInput">
+                                    <div class="radio-box">
+                                        <label class="nobg-label">
+                                            <input type="radio" name="script">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>新增用户</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="scriptSetInput selectInput">
+                                    <div class="radio-box">
+                                        <label class="nobg-label">
+                                            <input type="radio" name="script">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>111</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="scriptSetInput fr input-box">
+                <div class="input-row">
+                    <span class="fl range-span">分享范围</span>
+                    <div class="radio-box">
+                        <label class="nobg-label">
+                            <input type="radio" name="range">
+                            <span></span>
+                            个人
+                        </label>
+                        <label style="margin-left:17px;" class="nobg-label">
+                            <input type="radio" name="range">
+                            <span></span>
+                            本部门
+                        </label>
+                    </div>
+                </div>
+                <div class="input-row rl">
+                    <span class="fl">成　　员</span>
+                    <div class="con-div">
+                        <span class="example-text">请选择成员</span>
+                    </div>
+                    <a class="ab add-icon" onclick="addPerson(this)"></a>
+                </div>
+                <div class="input-row">
+                    <!-- <span class="intro-span">公共脚本说明</span> -->
+                    <span class="fl">公共脚本说明</span>
+                    <div class="textarea-div">
+                        <!-- <input type="text" placeholder="请输入公共脚本说明"> -->
+                        <textarea></textarea>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="scriptSet" class="scriptSet" title="下述设置将会在引用脚本中生效，请确认后再提交保存">
+        <div class="scriptSet">
+            <div class="scriptSetInput">
+                <div class="input-row">
+                    <span class="fl">分享范围</span>
+                    <div class="radio-box">
+                        <label class="nobg-label">
+                            <input type="radio" name="range">
+                            <span></span>
+                            个人
+                        </label>
+                        <label style="margin-left:17px;" class="nobg-label">
+                            <input type="radio" name="range">
+                            <span></span>
+                            本部门
+                        </label>
+                    </div>
+                </div>
+                <div class="input-row rl">
+                    <span class="fl">成    员</span>
+                    <div class="con-div">
+                        <span class="example-text">请选择开发人员</span>
+                    </div>
+                    <a class="ab add-icon" onclick="addPerson(this)"></a>
+                </div>
+                <div class="input-row">
+                    <span class="fl">公共脚本说明</span>
+                    <div>
+                        <input type="text" placeholder="请输入公共脚本说明">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 删除 -->
+    <div id="isDelete" title="确认">
+        <p>确定删除该脚本？</p>
+    </div>
+    <div id="addPerson" title="选择人员">
+        <ul id="treeDemo" class="ztree"></ul>
+    </div>
+    <div class="alert-con success-info ab">
+        操作成功！
+    </div>
+    <div class="alert-con fail-info ab">
+        操作失败！
+    </div>
+    <div class="alert-con rights-info ab">
+        该用户没有操作权限！
+    </div>
+</body>
+    <script src="../js/common.js"></script>
+    <!-- 引入树状菜单js -->
+    <script src="../js/staffs.js"></script> 
+    <script src="../js/section.js"></script> 
+    <script>
+        $(function(){
+            $('.table-rec-btn').click(function(){
+                window.parent.location.href ='../recording.html';
+            })
+
+            $('.script-type span:first-child').click(function(){
+                if($(this).hasClass('on')){
+                    return false;
+                }else{
+                    changeScriptType();
+                }
+            })
+
+            $(".dep-script").click(function(){
+                window.location.href = "dep-pub-scriptList.html";
+            })
+
+        })
+        function changeScriptType(){
+            $('#changeScriptType').dialog('open');
+        }
+        $("#changeScriptType").dialog({
+            autoOpen: false,
+            resizable: false,
+            height: 'auto',
+            width: 400,
+            modal: false,
+            buttons: {
+                "确定": function () {	  
+                    $(this).dialog("close");
+                    }
+                ,
+                "取消":function(){
+                    $(this).dialog( "close" );
+                }
+            },close:function(){
+               
+                }
+            
+        });
+
+        // 新增制作公共脚本
+        function addPublicScript(){
+            $('#addPublicScript').dialog('open');
+        }
+        $("#addPublicScript").dialog({
+            autoOpen: false,
+            resizable: false,
+            height: 'auto',
+            width: 580,
+            modal: false,
+            buttons: {
+                "确定": function () {   
+                    $(this).dialog("close");
+                    // $(".success-info").fadeIn();
+                    successInfo();
+                }
+                ,
+                "取消":function(){
+                    $(this).dialog( "close" );
+                }
+            },close:function(){
+               
+                }
+        });
+
+        // 公共脚本设置
+        function scriptSet(){
+            $('#scriptSet').dialog('open');
+        }
+        $("#scriptSet").dialog({
+            autoOpen: false,
+            resizable: false,
+            height: 'auto',
+            width: 580,
+            modal: false,
+            buttons: {
+                "保存": function () {  
+                    $(this).dialog("close");
+                    successInfo();
+                }
+                ,
+                "取消":function(){
+                    $(this).dialog( "close" );
+                }
+            },close:function(){
+               
+            }
+            
+        });
+    </script>
+</html>

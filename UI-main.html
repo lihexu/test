@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>UI自动化</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style2.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>    
+    <script src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="js/jquery.ztree.all.min.js"></script>
+    <style>
+        .textarea-div{
+            padding:10px;
+            border:1px solid #e5e5e5;
+        }
+        .textarea-div textarea{
+            resize:none;
+            height:50px;
+        }
+        .select-box{
+            width:230px;
+        }
+        .input-box{
+            width:260px;
+        }
+    </style>
+</head>
+<body>
+    <div class="containter">
+        <div class="head">
+            <div class="head-con clearfix">
+                <div class="logo fl">软件交付服务云平台<p>SOFTWARE DELIVERY SERVICES CLOUD PLATFORM</p></div>
+                <div class="user-operate fr">
+                    <div class="head-img">
+                        <img src="img/head.png" alt="" width="100%">
+                    </div>
+                    <span>admin</span>
+                    <ul style='display:none'>
+						<li class="edit-info" onclick="reviseInfo()">个人信息修改</li>
+						<li class="edit-password" onclick="revisePassWord()">密码修改</li>						
+						<li class="quit">退出</li>
+						<li class="help">帮助</li>
+					</ul>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="desk.html">我的工作台</a></li>
+                        <li><a href="project-manage.html">项目管理</a></li>
+                        <li><a href="#">资源管理</a></li>
+                        <li><a href="#">项目发布</a></li>
+                        <li><a href="#">代码检查</a></li>
+                        <li><a href="#">测试管理</a></li>
+                        <li class="on"><a href="#">UI自动化</a></li>
+                        <li><a href="#">性能测试</a></li>
+                    </ul>
+                </div>
+            </div>          
+        </div>        
+        <div class="main ui-automation ui-rightBg">
+            <div class="left">
+                <div class="left-title">UI自动化</div>
+                <div class="left-con">
+                    <div class="class-a">
+                        <a href="#" data-href="iframe/UI-project.html" class="active">我的项目</a>
+                    </div>
+                    <div class="class-a">
+                        <a href="#">
+                            <span class="fl">我的脚本集</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="class-b">
+                            <li>
+                                <a href="#" page="show" data-href="iframe/UI-script.html">
+                                    <span class="fl">新增脚本管理</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="class-c">
+                                    <li>
+                                        <a page="show" href="#" data-href="iframe/moduleList.html">模块列表</span></a>
+                                    </li>
+                                    <li>
+                                        <a page="show" href="#" data-href="iframe/scriptList.html">脚本列表</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a page="show" href="#" class="change-tit">
+                                    <span class="fl">公共脚本管理</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="class-c">
+                                    <li>
+                                        <a page="show" href="#" title="false" data-href="iframe/public-scriptList.html">我的公共脚本</a>
+                                    </li>
+                                    <li>
+                                        <a page="show" href="#" title="false" data-href="iframe/dep-pub-scriptList.html">部门公共脚本</a>
+                                    </li>
+                                    <li>
+                                        <a page="show" href="#" onclick="addPublicScript()">制作公共脚本</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a page="show" href="execute-main.html">
+                                    <span class="fl">执行计划</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="class-a">
+                        <a href="#">未归档项目</a>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="left-arrow"></div>
+                <div class="right-top">
+                    <div class="right-top-search fr">
+                        <input type="text">
+                        <ul style="display: none;">
+                            <li>JAVA电子政务平台</li>
+                            <li>臻善OA办公平台</li>						
+                            <li>臻善App办公平台</li>
+                            <li>技术管理中心</li>
+                        </ul>
+                    </div>
+                    <div class="right-top-title">我的项目</div>
+                </div>
+                <div class="right-con">
+                    <iframe src="iframe/UI-project.html" id="iframe"></iframe>
+                    <div class="page-con">
+                        <ul class="page">
+                            <li>
+                                <a href="javascript:;">首页</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上一页</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">1</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="click">2</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">3</a>
+                            </li>
+                            <li>
+                                <!-- <a href="javascript:;">...</a> -->
+                                ...
+                            </li>
+                            <li>
+                                <a href="javascript:;">999</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">下一页</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">尾页</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="reviseInfo" title="个人信息修改">
+            <div class="revise-info revise-modify1">
+                <div class="input-row">
+                    <span class="fl">用户账号</span>
+                    <div>
+                        <input type="text" value="huzf" readonly>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">用户名称</span>
+                    <div>
+                        <input type="text" value="胡芝凤" readonly>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">用户类型</span>
+                    <div>
+                        <input type="text" value="管理员" readonly>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">联系电话</span>
+                    <div>
+                        <input type="text" value="13777465719">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">邮　　箱</span>
+                    <div>
+                        <input type="text" value="">
+                    </div>
+                </div>
+                <div class="input-row head-upload">
+                    <span class="fl">上传头像</span>
+                    <div>
+                        <div id="preview">
+                            <img id="imghead" border="0" src="img/base_head.png" width="100%" onclick="$('#previewImg').click();">
+                        </div>
+                        <input type="file" onchange="previewImage(this)" style="display: none;" id="previewImg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="revisePassWord" title="密码修改">
+            <div class="revise-info">
+                <div class="input-row">
+                    <span class="fl">原密码</span>
+                    <div>
+                        <input type="password" value="" placeholder="请输入原密码">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">新密码</span>
+                    <div>
+                        <input type="password" value="" placeholder="请输入新密码">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">确认密码</span>
+                    <div>
+                        <input type="password" value="" placeholder="确认密码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 新增制作公共脚本弹窗 -->
+    <div id="addPublicScript" class="scriptSet" title="下述设置将会在引用脚本中生效，请确认后再提交保存">
+        <div class="scriptSet clearfix">
+            
+            <div class="fl select-box">
+                <div class="input-row">
+                    <span class="fl">原脚本分组</span>
+                    <div>
+                        <select>
+                            <option value="">需求确认</option>
+                            <option value="0">需求确认111</option>
+                            <option value="1">需求确认222</option>
+                            <option value="2">需求确认333</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <table cellpadding='0' cellspacing='0' border="0" width='100%' class="selectTable">
+                        <tr>
+                            <!-- <th style="padding:0 3px;"><label><input type="checkbox"><span></span></label></th> -->
+                            <td>选择</td>
+                            <td>脚本名</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="scriptSetInput selectInput">
+                                    <div class="radio-box">
+                                        <label class="nobg-label">
+                                            <input type="radio" name="script">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>确认</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="scriptSetInput selectInput">
+                                    <div class="radio-box">
+                                        <label class="nobg-label">
+                                            <input type="radio" name="script">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>录制</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="scriptSetInput selectInput">
+                                    <div class="radio-box">
+                                        <label class="nobg-label">
+                                            <input type="radio" name="script">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>新增用户</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="scriptSetInput selectInput">
+                                    <div class="radio-box">
+                                        <label class="nobg-label">
+                                            <input type="radio" name="script">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>111</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="scriptSetInput fr input-box">
+                <div class="input-row">
+                    <span class="fl range-span">分享范围</span>
+                    <div class="radio-box">
+                        <label class="nobg-label">
+                            <input type="radio" name="range">
+                            <span></span>
+                            个人
+                        </label>
+                        <label style="margin-left:17px;" class="nobg-label">
+                            <input type="radio" name="range">
+                            <span></span>
+                            本部门
+                        </label>
+                    </div>
+                </div>
+                <div class="input-row rl">
+                    <!-- <span class="fl">成员</span>
+                    <div>
+                        <input type="text" placeholder="请添加成员">
+                    </div> -->
+                    <span class="fl">成　　员</span>
+                    <div class="con-div">
+                        <span class="example-text">请选择成员</span>
+                    </div>
+                    <a class="ab add-icon" onclick="addPerson(this)"></a>
+                </div>
+                <div class="input-row">
+                    <!-- <span class="intro-span">公共脚本说明</span> -->
+                    <span class="fl">公共脚本说明</span>
+                    <div class="textarea-div">
+                        <!-- <input type="text" placeholder="请输入公共脚本说明"> -->
+                        <textarea></textarea>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div id="addPerson" title="选择人员">
+        <ul id="treeDemo" class="ztree"></ul>
+    </div>
+
+    <div class="alert-con success-info ab">
+        操作成功！
+    </div>
+    <div class="alert-con fail-info ab">
+        操作失败！
+    </div>
+    <div class="alert-con rights-info ab">
+        该用户没有操作权限！
+    </div>
+</body>
+<!-- 引入树状菜单js -->
+<script src="js/staffs.js"></script> 
+<script src="js/section.js"></script> 
+<script>        
+    $(function(){            
+        $('#iframe').height($('.right-con').height()-52);
+        $('.class-a a').click(function(){
+            var href = $(this).attr('data-href');
+            var page = $(this).attr("page");
+            var tit = $(this).attr("title");
+            var change = $(this).attr("class");
+            $('#iframe').attr('src',href);
+            $('.main').removeClass('ui-rightBg');            
+
+            if((href != null && tit == null) || change == "change-tit"){
+                $('.right-top-title').text($(this).text());
+            }
+            // $(".change-tit").click(function(){
+            //     $('.right-top-title').text($(this).text());
+            // })
+            // 判断页面为下面俩个时右侧内容区无白色背景
+            if($('#iframe').attr('src')=='iframe/UI-project.html'||
+                $('#iframe').attr('src')=='iframe/UI-script.html'){
+                $('.main').addClass('ui-rightBg');
+            }
+
+            // 判断是否显示分页
+            if(page == "show"){
+                $(".page-con").show();
+            }else{
+                $(".page-con").hide();
+            }
+        })
+
+        var cardLi = $('.cardScroll .bd li');
+        for(var i=0;i<cardLi.length;i++){
+            $('.cardScroll .hd ul').append('<li></li>');
+        }
+        jQuery(".cardScroll").slide({mainCell:".bd ul",effect:"fold",trigger:"click",delayTime:0,pnLoop:false});
+        $('.pro-card-box,.pro-card-box li').width('100%');
+    })
+
+     // 新增制作公共脚本
+    function addPublicScript(){
+        $('#addPublicScript').dialog('open');
+    }
+    $("#addPublicScript").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: 'auto',
+        width: 580,
+        modal: false,
+        buttons: {
+            "确定": function () {   
+                $(this).dialog("close");
+                successInfo();
+            }
+            ,
+            "取消":function(){
+                $(this).dialog( "close" );
+            }
+        },close:function(){
+           
+        }
+    });
+    </script>
+    <script src="js/common.js"></script>   
+</html>

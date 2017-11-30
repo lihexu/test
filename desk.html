@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>我的工作台</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+</head>
+
+<body>
+    <div class="containter">
+        <div class="head">
+            <div class="head-con clearfix">
+                <div class="logo fl">软件交付服务云平台
+                    <p>SOFTWARE DELIVERY SERVICES CLOUD PLATFORM</p>
+                </div>
+                <div class="user-operate fr">
+                    <div class="head-img">
+                        <img src="img/head.png" alt="" width="100%">
+                    </div>
+                    <span>admin</span>
+                    <ul style='display:none'>
+                        <li class="edit-info" onclick="reviseInfo()">个人信息修改</li>
+                        <li class="edit-password" onclick="revisePassWord()">密码修改</li>
+                        <li class="quit">退出</li>
+                        <li class="help">帮助</li>
+                    </ul>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li class="on"><a href="#">我的工作台</a></li>
+                        <li><a href="project-manage.html">项目管理</a></li>
+                        <li><a href="#">资源管理</a></li>
+                        <li><a href="#">项目发布</a></li>
+                        <li><a href="#">代码检查</a></li>
+                        <li><a href="#">测试管理</a></li>
+                        <li><a href="UI-main.html">UI自动化</a></li>
+                        <li><a href="#">性能测试</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main my-project">
+            <div class="left">
+                <div class="left-title">我的项目</div>
+                <div class="left-con">
+                    <div class="class-a">
+                        <a href="#">
+                            <span class="fl">基础研发中心</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="class-b">
+                            <li>
+                                <a href="#">
+                                    <span class="fl">新技术研究部</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="class-c">
+                                    <li>
+                                        <a href="#">
+                                            <span class="fl">JAVA电子政务平台</span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <ul class="class-d">
+                                            <li>
+                                                <a href="#">JAVA电子政务平台1.0</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">JAVA电子政务平台2.0</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fl">智能表单部</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fl">基础图形部</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fl">政务平台部</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fl">综合测试部</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="class-a">
+                        <a href="#">
+                            <span class="fl">综合事业部</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="class-b">
+                            <li>
+                                <a href="#">
+                                    <span class="fl">研发一部</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="class-c">
+                                    <li>
+                                        <a href="#">
+                                            <span class="fl">JAVA电子政务平台</span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <ul class="class-d">
+                                            <li>
+                                                <a href="#">JAVA电子政务平台1.0</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">JAVA电子政务平台2.0</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fl">研发二部</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fl">研发三部</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fl">研发四部</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="left-arrow"></div>
+                <div class="right-top">
+                    <div class="right-top-search fr">
+                        <input type="text">
+                        <ul style="display: none;">
+                            <li>JAVA电子政务平台</li>
+                            <li>臻善OA办公平台</li>
+                            <li>臻善App办公平台</li>
+                            <li>技术管理中心</li>
+                        </ul>
+                    </div>
+                    <div class="right-top-title">项目总览</div>
+                </div>
+                <div class="right-con">
+                    <iframe src="iframe/card-list.html" id="iframe"></iframe>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="reviseInfo" title="个人信息修改">
+            <div class="revise-info revise-modify1">
+                <div class="input-row">
+                    <span class="fl">用户账号</span>
+                    <div>
+                        <input type="text" value="huzf" readonly>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">用户名称</span>
+                    <div>
+                        <input type="text" value="胡芝凤" readonly>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">用户类型</span>
+                    <div>
+                        <input type="text" value="管理员" readonly>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">联系电话</span>
+                    <div>
+                        <input type="text" value="13777465719">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">邮　　箱</span>
+                    <div>
+                        <input type="text" value="">
+                    </div>
+                </div>
+                <div class="input-row head-upload">
+                    <span class="fl">上传头像</span>
+                    <div>
+                        <div id="preview">
+                            <img id="imghead" border="0" src="img/base_head.png" width="100%" onclick="$('#previewImg').click();">
+                        </div>
+                        <input type="file" onchange="previewImage(this)" style="display: none;" id="previewImg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="revisePassWord" title="密码修改">
+            <div class="revise-info">
+                <div class="input-row">
+                    <span class="fl">原密码</span>
+                    <div>
+                        <input type="password" value="" placeholder="请输入原密码">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">新密码</span>
+                    <div>
+                        <input type="password" value="" placeholder="请输入新密码">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">确认密码</span>
+                    <div>
+                        <input type="password" value="" placeholder="确认密码">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="js/common.js"></script>
+<script>
+    $(function(){
+        $('#iframe').height($('.right-con').height()-52);
+    })
+    //头像上传预览
+    function previewImage(file) {
+        var MAXWIDTH = 81;
+        var MAXHEIGHT = 81;
+        var div = document.getElementById('preview');
+        if (file.files && file.files[0]) {
+            div.innerHTML = '<img id=imghead onclick=$("#previewImg").click()>';
+            var img = document.getElementById('imghead');
+            img.onload = function() {
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width = rect.width;
+                img.height = rect.height;
+                //                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top + 'px';
+            }
+            var reader = new FileReader();
+            reader.onload = function(evt) {
+                img.src = evt.target.result;
+            }
+            reader.readAsDataURL(file.files[0]);
+        } else //兼容IE
+        {
+            var sFilter = 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status = ('rect:' + rect.top + ',' + rect.left + ',' + rect.width + ',' + rect.height);
+            div.innerHTML = "<div id=divhead style='width:" + rect.width + "px;height:" + rect.height + "px;margin-top:" + rect.top + "px;" + sFilter + src + "\"'></div>";
+        }
+    }
+
+    function clacImgZoomParam(maxWidth, maxHeight, width, height) {
+        var param = {
+            top: 0,
+            left: 0,
+            width: width,
+            height: height
+        };
+        if (width > maxWidth || height > maxHeight) {
+            rateWidth = width / maxWidth;
+            rateHeight = height / maxHeight;
+
+            if (rateWidth > rateHeight) {
+                param.width = maxWidth;
+                param.height = Math.round(height / rateWidth);
+            } else {
+                param.width = Math.round(width / rateHeight);
+                param.height = maxHeight;
+            }
+        }
+        param.left = Math.round((maxWidth - param.width) / 2);
+        param.top = Math.round((maxHeight - param.height) / 2);
+        return param;
+    }
+</script>
+
+</html>

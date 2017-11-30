@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style2.css" rel="stylesheet">
+    <link href="../css/jquery-ui.css" rel="stylesheet">
+    <script src="../js/jquery.min.js"></script>    
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+<style>
+    html,body{
+        height: auto;
+    }
+    body{
+        min-width: auto;
+    }
+</style>
+<body>
+<div class="project-page project-list bgfff">
+    <div class="project-box">
+        <ul class="">
+            <li class="list-block">
+                <p class="project-p">版本进度</p>
+                <ul class="project-process rl">
+                    <li class="rl process-li">
+                        <span class="ab ab-new">
+                            <a>新建</a>
+                        </span>
+                        <span class="ab ab-apply">
+                            <a>申请</a>
+                        </span>
+                        <span class="ab ab-deve current">
+                            <a>开发阶段</a>
+                        </span>
+                        <span class="ab ab-test">
+                            <a>测试阶段</a>
+                        </span>
+                        <span class="ab ab-compl">
+                            <a>项目完成</a>
+                        </span>
+                    </li>
+                    <li class="ab process-li2"></li>
+                </ul>
+            </li>
+            <li class="list-block">
+                <p class="project-p">
+                    <span>版本信息</span>
+                    <span class="fr open-icon close-icon"></span>
+                    <span class="fr edit-icon"></span>
+                </p>
+                <ul class="project-msg slide-ul">
+                    <li>
+                        <span>版本名称：</span>
+                        <span>JAVA电子政务平台V1.0</span>
+                    </li>
+                    <li>
+                        <span>项目经理：</span>
+                        <span>沈剑锋</span>
+                    </li>
+                    <li>
+                        <span>所属部门：</span>
+                        <span>政务平台部</span>
+                    </li>
+                    <li>
+                        <span>开发人员：</span>
+                        <span>刘亮，金超</span>
+                    </li>
+                    <li>
+                        <span>计划开始日期：</span>
+                        <span>2017-08-01</span>
+                    </li>
+                    <li>
+                        <span>测试人员：</span>
+                        <span>吴娟，雷蕾</span>
+                    </li>
+                    <li>
+                        <span>计划发布日期：</span>
+                        <span>2017-09-01</span>
+                    </li>
+                    <li>
+                        <span>QA 人员：</span>
+                        <span>余依平</span>
+                    </li>
+                    <div class="cl"></div>
+                </ul>
+            </li>
+            <li class="list-block">
+                <p class="project-p">
+                    <span>开发应用</span>
+                    <span class="fr open-icon close-icon"></span>
+                    <span class="fr modify">申请变更</span>
+                    <span class="fr mass">批量打包</span>
+                </p>
+                <ul class="project-develop  slide-ul">
+                    <li>
+                        <div class="rl">
+                            <span class="fl">provider</span>
+                            <span class="fl config-span">配置项</span>
+                            <span class="fl status-span">开发中</span>
+                            <span class="fr operate-span">操作</span>
+                            <span class="fr compile-span">编译打包</span>
+                            <ul class="operate-ul ab">
+                                <li class="operate-list">操作1</li>
+                                <li class="operate-list">操作2</li>
+                                <li class="operate-list">操作3</li>
+                            </ul>
+                            <div class="cl"></div>
+                        </div>
+                        <span>
+                            git@120.26.243.204:root/edas-case-provider.git2017466300556_100499999
+                        </span>
+                    </li>
+                    <li>
+                        <div class="rl">
+                            <span class="fl">provider</span>
+                            <span class="fl config-span">配置项</span>
+                            <span class="fl status-span fail">编译失败</span>
+                            <span class="fr operate-span">操作</span>
+                            <span class="fr compile-span">编译打包</span>
+                            <ul class="operate-ul ab">
+                                <li class="operate-list">操作1</li>
+                                <li class="operate-list">操作2</li>
+                                <li class="operate-list">操作3</li>
+                            </ul>
+                            <div class="cl"></div>
+                        </div>
+                        <span>
+                            git@120.26.243.204:root/edas-case-provider.git2017466300556_100499999
+                        </span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    $(".operate-span").click(function(){
+        $(this).addClass("click").parent().find(".operate-ul").show().find("li").click(function(){
+            $(this).parents(".rl").find(".operate-span").text($(this).text()).removeClass("click");
+            $(this).parent().hide();
+        })
+
+    })
+
+    $(".open-icon").click(function(){
+        $(this).toggleClass("close-icon").parent().siblings(".slide-ul").slideToggle();
+    })
+
+    $(".edit-icon").click(function(){
+        window.location.href = "project-info.html"
+    })
+    
+</script>
+</html>

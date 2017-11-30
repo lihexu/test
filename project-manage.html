@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>项目管理</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style2.css">
+    <script src="js/jquery.min.js"></script>    
+    <script src="js/jquery-ui.js"></script>
+</head>
+<body class="project-info">
+    <div class="containter">
+        <div class="head">
+            <div class="head-con clearfix">
+                <div class="logo fl">软件交付服务云平台<p>SOFTWARE DELIVERY SERVICES CLOUD PLATFORM</p></div>
+                <div class="user-operate fr">
+                    <div class="head-img">
+                        <img src="img/head.png" alt="" width="100%">
+                    </div>
+                    <span>admin</span>
+                    <ul style='display:none'>
+						<li class="edit-info" onclick="reviseInfo()">个人信息修改</li>
+						<li class="edit-password" onclick="revisePassWord()">密码修改</li>						
+						<li class="quit">退出</li>
+						<li class="help">帮助</li>
+					</ul>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="desk.html">我的工作台</a></li>
+                        <li class="on"><a href="#">项目管理</a></li>
+                        <li><a href="#">资源管理</a></li>
+                        <li><a href="#">项目发布</a></li>
+                        <li><a href="#">代码检查</a></li>
+                        <li><a href="#">测试管理</a></li>
+                        <li><a href="UI-main.html">UI自动化</a></li>
+                        <li><a href="#">性能测试</a></li>
+                    </ul>
+                </div>
+            </div>          
+        </div>        
+        <div class="main my-project project">
+            <div class="left">
+                <div class="left-title">项目管理</div>
+                <div class="left-con">
+                    <div class="class-a new-a">
+                        <a intro="project-info" href="#" data-href="iframe/project-admin.html">新建项目</a>
+                    </div>
+                    <div class="class-a list-a">
+                        <a href="#" page="show" data-href="iframe/project-list.html">
+                            <span class="fl">项目列表</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <ul class="class-b">
+                            <li>
+                                <a page="show" intro="project-list" href="#" data-href="iframe/project-list.html">
+                                    <span class="fl">新技术研究部</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="class-c">
+                                    <li>
+                                        <a page="show" intro="version-list" href="#" data-href="iframe/version-list.html">
+                                            <span class="fl">JAVA电子政务平台</span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <ul class="class-d">
+                                            <li>
+                                                <a intro="version-detail" href="#" data-href="iframe/project-list-detail.html">JAVA电子政务平台1.0</a>
+                                            </li>
+                                            <li>
+                                                <a intro="version-detail" href="#" data-href="iframe/project-list-detail.html">JAVA电子政务平台2.0</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a page="show" href="#" data-href="iframe/project-list.html">
+                                    <span class="fl">智能表单部</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a page="show" href="#" data-href="iframe/project-list.html">
+                                    <span class="fl">基础图形部</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a page="show" href="#" data-href="iframe/project-list.html">
+                                    <span class="fl">政务平台部</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a page="show" href="#" data-href="iframe/project-list.html">
+                                    <span class="fl">综合测试部</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="left-arrow"></div>
+                <div class="right-top">
+                    <div class="right-top-search fr" style="display: none;">
+                        <input type="text">
+                        <ul style="display: none;">
+                            <li>JAVA电子政务平台</li>
+                            <li>臻善OA办公平台</li>						
+                            <li>臻善App办公平台</li>
+                            <li>技术管理中心</li>
+                        </ul>
+                    </div>
+                    <div class="right-top-title info-title">项目列表</div>
+                </div>
+                <div class="right-con">
+                    <iframe src="iframe/project-list.html" id="iframe"></iframe>
+                    <div class="page-con">
+                        <ul class="page">
+                            <li>
+                                <a href="javascript:;">首页</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">上一页</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">1</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="click">2</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">3</a>
+                            </li>
+                            <li>
+                                <!-- <a href="javascript:;">...</a> -->
+                                ...
+                            </li>
+                            <li>
+                                <a href="javascript:;">999</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">下一页</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">尾页</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="reviseInfo" title="个人信息修改">
+            <div class="revise-info">
+                <div class="input-row">
+                    <span class="fl">用户账号</span>
+                    <div>
+                        <input type="text" value="huzf" readonly>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">用户名称</span>
+                    <div>
+                        <input type="text" value="胡芝凤" readonly>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">用户类型</span>
+                    <div>
+                        <input type="text" value="管理员" readonly>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">联系电话</span>
+                    <div>
+                        <input type="text" value="13777465719">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">邮　　箱</span>
+                    <div>
+                        <input type="text" value="">
+                    </div>
+                </div>
+                <div class="input-row head-upload">
+                    <span class="fl">上传头像</span>
+                    <div>
+                        <div id="preview">
+                            <img id="imghead" border="0" src="img/base_head.png" width="100%" onclick="$('#previewImg').click();">
+                        </div>
+                        <input type="file" onchange="previewImage(this)" style="display: none;" id="previewImg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="revisePassWord" title="密码修改">
+            <div class="revise-info">
+                <div class="input-row">
+                    <span class="fl">原密码</span>
+                    <div>
+                        <input type="password" value="" placeholder="请输入原密码">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">新密码</span>
+                    <div>
+                        <input type="password" value="" placeholder="请输入新密码">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">确认密码</span>
+                    <div>
+                        <input type="password" value="" placeholder="确认密码">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="addPerson" title="选择人员">
+            <div id="esunTree" class="tree"></div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function(){
+        $('#iframe').height($('.right-con').height()-52);
+        $(".page-con").show();
+        $('.class-a a').click(function(){
+            var href = $(this).attr('data-href');
+            var page = $(this).attr("page");
+            var parent = $(this).parent()[0];
+            $('#iframe').attr('src',href);
+            $('.main').removeClass('ui-rightBg');            
+
+            switch($(this).attr("intro")){
+                case "project-info":
+                    $('.right-top-title').text("项目信息");
+                    break;
+                case "project-list":
+                    $('.right-top-title').text("项目列表");
+                    break;
+                case "version-list":
+                    $('.right-top-title').text("版本列表");
+                    break;
+                case "version-detail":
+                    $('.right-top-title').text("版本详情");
+                    break;
+                default :
+                    $('.right-top-title').text($(this).text());
+            }
+
+            // 判断页面为下面俩个时右侧内容区无白色背景
+            if($('#iframe').attr('src')=='iframe/UI-project.html'||
+                $('#iframe').attr('src')=='iframe/UI-script.html'){
+                $('.main').addClass('ui-rightBg');
+            }
+
+            // 判断是否显示分页
+            if(page == "show"){
+                $(".page-con").show();
+            }else{
+                $(".page-con").hide();
+            }
+        })
+    })
+    $("#addPerson").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: 'auto',
+        width: 452,
+        modal: true,
+        buttons: {
+            "确定": function () {                 
+                $(this).dialog("close");
+                allChecked("esunTree");
+            },
+            "取消":function(){
+                $(this).dialog( "close" );
+                clearChecked("esunTree")
+            }
+        },close:function(){
+            // $("#reviseInfo").find(":input").val("");
+        }
+            
+    });
+
+    // 时间选择器
+    $( ".datepicker" ).datepicker({
+        showOn: "button",
+        buttonImage: "img/time.png",
+        buttonImageOnly: true
+    });
+
+</script>
+<script src="js/common.js"></script>
+
+</html>

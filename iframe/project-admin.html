@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style2.css" rel="stylesheet">
+    <link href="../css/jquery-ui.css" rel="stylesheet">
+    <script src="../js/jquery.min.js"></script>    
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+<style>
+    html,body{
+        height: auto;
+    }
+    body{
+        min-width: auto;
+    }
+</style>
+<body>
+    <div class="project-page project-list bgfff">
+        <div class="info-box">
+            <ul class="info-ul clearfix">
+                <li>
+                    <span class="name-span">项目名称</span>
+                    <div class="con-div">
+                        <input class="ipt"  placeholder="请输入项目名称" />
+                    </div>
+                </li>
+                <li>
+                    <span class="name-span">所属部门</span>
+                    <div class="con-div">
+                        <input class="ipt"  placeholder="请输入所属部门" />
+                    </div>
+                </li>
+                <li>
+                    <span class="name-span">项目类型</span>
+                    <div class="con-div type-div">
+                        <select>
+                            <option>WEB</option>
+                            <option>Java</option>
+                            <option>Android</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <span class="name-span">项目背景</span>
+                    <div class="textarea-con con-div">
+                        <textarea></textarea>
+                    </div>
+                </li>
+            </ul>
+            <div class="btn-con">
+                <span class="fl save">保存</span>
+                <span class="fr back">返回</span>
+            </div>
+        </div>
+    </div>
+    <div class="alert-con success-info ab">
+        操作成功！
+    </div>
+    <div class="alert-con fail-info ab">
+        操作失败！
+    </div>
+    <div class="alert-con rights-info ab">
+        该用户没有操作权限！
+    </div>
+    <script>
+        $(".save").click(successInfo)
+    </script>
+</body>
+</html>

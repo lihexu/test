@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style2.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link href="../css/jquery-ui.css" rel="stylesheet">
+    <script src="../js/jquery.min.js"></script>   
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/jquery.ztree.all.min.js"></script>
+</head>
+<style>
+    html,body{
+        height: auto;
+    }
+    body{
+        min-width: auto;
+    }
+</style>
+<body>
+    <div class="project-page">
+        <div class="add-project clearfix">
+            <span class="fr create-new">创建新项目</span>
+        </div>
+        <div class="card-box">
+            <ul class="clearfix">
+                <li>
+                    <div class="card-title bg1">项目进度</div>
+                    <div class="card-con">
+                        <p><span class="fr">0</span>未开始</p>
+                        <p><span class="fr">70%</span>项目进度</p>
+                        <p><span class="fr">0</span>已完成</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="card-title bg2">资源管理</div>
+                    <div class="card-con">
+                        <p><span class="fr">0</span>未申请</p>
+                        <p><span class="fr color1">1</span>申请成功</p>
+                        <p><span class="fr color2">0</span>申请失败</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="card-title bg3">代码检查</div>
+                    <div class="card-con">
+                        <p><span class="fr">7</span>bug总数</p>
+                        <p><span class="fr color1">0</span>漏洞总数</p>
+                        <p><span class="fr color2">0</span>codesmell总数</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="card-title bg4">功能测试</div>
+                    <div class="card-con">
+                        <p><span class="fr">0</span>未执行</p>
+                        <p><span class="fr color1">1</span>执行成功</p>
+                        <p><span class="fr color2">0</span>执行失败</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="card-title bg5">缺陷统计</div>
+                    <div class="card-con">
+                        <p><span class="fr">0</span>未修复</p>
+                        <p><span class="fr color1">1</span>待验证</p>
+                        <p><span class="fr color2">0</span>已关闭</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="card-title bg6">UI自动化</div>
+                    <div class="card-con">
+                        <p><span class="fr">0</span>未执行</p>
+                        <p><span class="fr color1">4</span>执行成功</p>
+                        <p><span class="fr color2">0</span>执行失败</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="card-title bg7">性能测试</div>
+                    <div class="card-con">
+                        <p><span class="fr">10</span>场景总数</p>
+                        <p><span class="fr">4</span>执行次数</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        $(".create-new").click(function(){
+            window.location.href = "project-admin.html";
+            $(".right-top-title",parent.document).text("项目信息");
+        })
+    </script>
+</body>
+</html>

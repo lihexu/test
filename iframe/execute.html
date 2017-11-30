@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style2.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link href="../css/jquery-ui.css" rel="stylesheet">
+    <script src="../js/jquery.min.js"></script>    
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/jquery.ztree.all.min.js"></script>
+</head>
+<style>
+    html,body{
+        height: auto;
+    }
+    body{
+        min-width: auto;
+    }
+    .select-box{
+        width:230px;
+    }
+    .input-box{
+        width:260px;
+    }
+    .intro-span{
+        line-height:36px;
+    }
+    .range-span{
+        width:60px!important;
+        text-align:left!important;
+    }
+    .select-box .input-row span.fl{
+        color:#333;
+    }
+    #isDelete p{
+        padding: 40px 0 20px;
+        font-size: 18px;
+        color: #333;
+        text-align: center;
+    }
+    .textarea-div{
+        height:50px;
+        padding:10px;
+        border:1px solid #e5e5e5;
+    }
+    .textarea-div textarea{
+        resize:none;
+    }
+</style>
+<body>
+    <div class="public-script script-list">
+        <div class="script-ops fr">
+            <button class="add-module" onclick="addScript()">新增脚本</button>
+            <button class="add-module delete-script-btn">移除脚本</button>
+            <button class="add-module execute-script-btn">
+                执行脚本
+                <span></span>
+                <ul>
+                    <li class="e1">执行脚本</li>
+                    <li class="e2" onclick="timingExecute()">定时执行</li>
+                    <li class="e3">失败重跑</li>
+                </ul>
+            </button>
+        </div>
+        <div class="table-div">
+            <table cellpadding='0' cellspacing='0' border="0" width='100%' class="scriptTable">
+                <tr>
+                    <th width='5%' style="padding:0 3px;"><label><input type="checkbox"><span></span></label></th>
+                    <th>脚本名称</th>
+                    <th width="80">执行结果</th>
+                    <th width="60">浏览器</th>
+                    <th width="100">执行日期</th>
+                    <th>执行耗时</th>
+                    <th>执行人</th>
+                    <th>执行节点</th>
+                    <th width="150">错误分析</th>
+                    <th width='10%'>操作</th>
+                </tr>
+                <tr>
+                    <td width='5%' style="padding:0 3px;">
+                        <label>
+                            <input type="checkbox">
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>登录页面</td>
+                    <td class="color2">失败</td>
+                    <td><span class="browser"></span></td>
+                    <td>2017-09-28</td>
+                    <td>100s</td>
+                    <td>tester</td>
+                    <td>192.168.1.1</td>
+                    <td width="100">元素定位</td>
+                    <td class="operate">
+                        <span class="trend" title="执行趋势"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width='5%' style="padding:0 3px;">
+                        <label>
+                            <input type="checkbox">
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>登录页面</td>
+                    <td class="color1">失败</td>
+                    <td ><span class="browser"></span></td>
+                    <td>2017-09-28</td>
+                    <td>100s</td>
+                    <td>tester</td>
+                    <td>192.168.1.1</td>
+                    <td>元素定位不到</td>
+                    <td class="operate">
+                        <span class="trend" title="执行趋势"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width='5%' style="padding:0 3px;">
+                        <label>
+                            <input type="checkbox">
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>登录页面</td>
+                    <td class="color2">失败</td>
+                    <td><span class="browser"></span></td>
+                    <td>2017-09-28</td>
+                    <td >100s</td>
+                    <td >tester</td>
+                    <td>192.168.1.1</td>
+                    <td>元素定位不到</td>
+                    <td class="operate">
+                        <span class="trend" title="执行趋势"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width='5%' style="padding:0 3px;">
+                        <label>
+                            <input type="checkbox">
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>登录页面</td>
+                    <td class="color1">失败</td>
+                    <td><span class="browser"></span></td>
+                    <td>2017-09-28</td>
+                    <td >100s</td>
+                    <td >tester</td>
+                    <td>192.168.1.1</td>
+                    <td>元素定位</td>
+                    <td class="operate">
+                        <span class="trend" title="执行趋势"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width='5%' style="padding:0 3px;">
+                        <label>
+                            <input type="checkbox">
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>登录页面</td>
+                    <td class="color2">失败</td>
+                    <td><span class="browser"></span></td>
+                    <td>2017-09-28</td>
+                    <td>100s</td>
+                    <td>tester</td>
+                    <td>192.168.1.1</td>
+                    <td>元素定位不到</td>
+                    <td class="operate">
+                        <span class="trend" title="执行趋势"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width='5%' style="padding:0 3px;">
+                        <label>
+                            <input type="checkbox">
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>登录页面</td>
+                    <td class="color1">失败</td>
+                    <td><span class="browser"></span></td>
+                    <td>2017-09-28</td>
+                    <td>100s</td>
+                    <td>tester</td>
+                    <td>192.168.1.1</td>
+                    <td>元素定位不到</td>
+                    <td class="operate">
+                        <span class="trend" title="执行趋势"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width='5%' style="padding:0 3px;">
+                        <label>
+                            <input type="checkbox">
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>登录页面</td>
+                    <td class="color2">失败</td>
+                    <td><span class="browser"></span></td>
+                    <td>2017-09-28</td>
+                    <td>100s</td>
+                    <td>tester</td>
+                    <td>192.168.1.1</td>
+                    <td>元素定位</td>
+                    <td class="operate">
+                        <span class="trend" title="执行趋势"></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="scriptSet" class="scriptSet" title="下述设置将会在引用脚本中生效，请确认后再提交保存">
+        <div class="scriptSet">
+            <div class="scriptSetInput">
+                <div class="input-row">
+                    <span class="fl">分享范围</span>
+                    <div class="radio-box">
+                        <label class="nobg-label">
+                            <input type="radio" name="r1">
+                            <span></span>
+                            个人
+                        </label>
+                        <label style="margin-left:17px;" class="nobg-label">
+                            <input type="radio" name="r1">
+                            <span></span>
+                            本部门
+                        </label>
+                    </div>
+                </div>
+                <div class="input-row rl">
+                    <span class="fl">成    员</span>
+                    <div class="con-div">
+                        <span class="example-text">请选择开发人员</span>
+                    </div>
+                    <a class="ab add-icon" onclick="addPerson(this)"></a>
+                </div>
+                <div class="input-row">
+                    <span class="fl">公共脚本说明</span>
+                    <div>
+                        <input type="text" placeholder="请输入公共脚本说明">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="addScript" class="scriptSet execute-addScript" title="添加脚本">
+        <div class="scriptSet">
+            <div class="scriptSetInput">
+                <div class="input-row">
+                    <span class="fl" style="width:60px;">脚本类别</span>
+                    <div class="radio-box">
+                        <label class="nobg-label">
+                            <input type="radio" name="r1">
+                            <span></span>
+                            我的脚本
+                        </label>
+                        <label style="margin-left:17px;" class="nobg-label">
+                            <input type="radio" name="r1">
+                            <span></span>
+                            公共脚本
+                        </label>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl" style="width:60px;">所属模块</span>
+                    <div>
+                        <select style="width:225px;">
+                            <option value="">请选择模块</option>
+                            <option value="0">请选择模块</option>
+                            <option value="1">请选择模块</option>
+                            <option value="2">请选择模块</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-head">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="scriptTable">
+                        <tr>
+                            <th style="padding:0 3px;"><label><input type="checkbox"><span></span></label></th>
+                            <th>脚本名称</th>
+                            <th>负责人</th>
+                            <th>模块名称</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-body">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="scriptTable">
+                        <tr>
+                            <td style="padding:0 3px;"><label><input type="checkbox"><span></span></label></td>
+                            <td>登录页面</td>
+                            <td>tester</td>
+                            <td>登录模块</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0 3px;"><label><input type="checkbox"><span></span></label></td>
+                            <td>注册页面</td>
+                            <td>tester</td>
+                            <td>注册页面</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0 3px;"><label><input type="checkbox"><span></span></label></td>
+                            <td>登录页面</td>
+                            <td>tester</td>
+                            <td>登录模块</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0 3px;"><label><input type="checkbox"><span></span></label></td>
+                            <td>注册页面</td>
+                            <td>tester</td>
+                            <td>注册页面</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0 3px;"><label><input type="checkbox"><span></span></label></td>
+                            <td>注册页面</td>
+                            <td>tester</td>
+                            <td>注册页面</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="timingExecute" class="scriptSet" title="设置">
+        <div class="scriptSet">
+            <div class="scriptSetInput">
+                <div class="input-row">
+                    <span class="fl">是否集成</span>
+                    <div class="checkbox-div">
+                        <label>
+                            <input type="checkbox">
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">集成时间</span>
+                    <div class="checkbox-div">
+                        <label>
+                            <input type="checkbox">
+                            <span></span>
+                            星期一
+                        </label>
+                        <label>
+                            <input type="checkbox">
+                            <span></span>
+                            星期二
+                        </label>
+                        <label>
+                            <input type="checkbox">
+                            <span></span>
+                            星期三
+                        </label>
+                        <label>
+                            <input type="checkbox">
+                            <span></span>
+                            星期四
+                        </label>
+                        <label>
+                            <input type="checkbox">
+                            <span></span>
+                            星期五
+                        </label>
+                        <label>
+                            <input type="checkbox">
+                            <span></span>
+                            星期六
+                        </label>
+                        <label>
+                            <input type="checkbox">
+                            <span></span>
+                            星期日
+                        </label>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl placeholder">占个位置</span>
+                    <div class="fl">
+                        <select class="time-select">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                        </select>
+                    </div>
+                    <span class="fl text-span1">点</span>
+                    <div class="fl">
+                        <select class="time-select">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="56">56</option>
+                            <option value="47">47</option>
+                            <option value="48">48</option>
+                            <option value="49">49</option>
+                            <option value="50">50</option>
+                            <option value="51">51</option>
+                            <option value="52">52</option>
+                            <option value="53">53</option>
+                            <option value="54">54</option>
+                            <option value="55">55</option>
+                            <option value="56">56</option>
+                            <option value="57">57</option>
+                            <option value="58">58</option>
+                            <option value="59">59</option>
+                        </select>
+                    </div>
+                    <span class="fl text-span1">分</span>
+                    <span class="fl text-span2">时隔</span>
+                    <div class="fl">
+                        <select class="time-select">
+                            <option value="0">无</option>
+                            <option value="0">0</option>
+                            <option value="0.5">0.5</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                    <!-- <div class="fl no-div">
+                        <input type="text" value="无" readonly />
+                    </div> -->
+                    <span class="fl text-span3">小时执行</span>
+                </div>
+                <div class="input-row">
+                    <p class="intro-p">
+                        ( <span>选择时隔星期不再生效，小时或者分不再生效</span> )
+                    </p>
+                </div>
+                <div class="input-row">
+                    <span class="fl">浏览器类型</span>
+                    <div>
+                        <select class="time-select">
+                            <option value="">Chrome</option>
+                            <option value="0">Firefox</option>
+                            <option value="1">Safari</option>
+                            <option value="2">IE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">执行机组</span>
+                    <div>
+                        <select class="time-select">
+                            <option value="">aui-slave</option>
+                            <option value="0">aui-slave111</option>
+                            <option value="1">aui-slave222</option>
+                            <option value="2">aui-slave333</option>
+                        </select>
+                    </div>
+                </div>  
+                <div class="input-row rl">
+                    <span class="fl">成　　员</span>
+                    <div class="con-div">
+                        <span class="example-text">请选择开发人员</span>
+                    </div>
+                    <a class="ab add-icon" onclick="addPerson(this)"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 删除 -->
+    <div id="isDelete" title="确认">
+        <p>确定删除该脚本？</p>
+    </div>
+    <div id="addPerson" title="选择人员">
+        <ul id="treeDemo" class="ztree"></ul>
+    </div>
+    <div class="alert-con success-info ab">
+        操作成功！
+    </div>
+    <div class="alert-con fail-info ab">
+        操作失败！
+    </div>
+    <div class="alert-con rights-info ab">
+        该用户没有操作权限！
+    </div>
+</body>
+    <script src="../js/common.js"></script>
+    <script>
+        $(function(){
+            $(".trend").click(function(){
+                window.parent.location.href = "../execute-trend.html";
+            })
+        })
+
+        // 公共脚本设置
+        function scriptSet(){
+            $('#scriptSet').dialog('open');
+        }
+        $("#scriptSet").dialog({
+            autoOpen: false,
+            resizable: false,
+            height: 'auto',
+            width: 580,
+            modal: false,
+            buttons: {
+                "保存": function () {  
+                    $(this).dialog("close");
+                    successInfo();
+                }
+                ,
+                "取消":function(){
+                    $(this).dialog( "close" );
+                }
+            },close:function(){
+               
+            }
+            
+        });
+
+        // 新增脚本
+        function addScript(){
+            $('#addScript').dialog('open');
+        }
+        $("#addScript").dialog({
+            autoOpen: false,
+            resizable: false,
+            height: 'auto',
+            width: 580,
+            modal: false,
+            buttons: {
+                "保存": function () {  
+                    $(this).dialog("close");
+                    successInfo();
+                }
+                ,
+                "取消":function(){
+                    $(this).dialog( "close" );
+                }
+            },close:function(){
+               
+            }
+            
+        });
+
+        // 定时执行弹框
+        function timingExecute(){
+            $('#timingExecute').dialog('open');
+        }
+        $("#timingExecute").dialog({
+            autoOpen: false,
+            resizable: false,
+            height: 'auto',
+            width: 630,
+            modal: false,
+            buttons: {
+                "保存": function () {  
+                    $(this).dialog("close");
+                    successInfo();
+                }
+                ,
+                "取消":function(){
+                    $(this).dialog( "close" );
+                }
+            },close:function(){
+               
+            }
+            
+        });
+    </script>
+</html>

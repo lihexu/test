@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>  
+    <style>
+        #isDelete p{
+            padding: 40px 0 20px;
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+        }
+        .input-row .width100{
+            width:100px!important;
+        }
+        .revise-info{
+            padding-bottom:16px!important;
+        }
+    </style>  
+</head>
+<body>
+    <div class="containter">
+        <div class="head">
+            <div class="head-con clearfix">
+                <div class="logo fl">软件交付服务云平台<p>SOFTWARE DELIVERY SERVICES CLOUD PLATFORM</p></div>
+                <div class="user-operate fr">
+                    <div class="head-img">
+                        <img src="img/head.png" alt="" width="100%">
+                    </div>
+                    <span>admin</span>
+                    <ul style='display:none'>
+						<li class="edit-info" onclick="reviseInfo()">个人信息修改</li>
+						<li class="edit-password" onclick="revisePassWord()">密码修改</li>						
+						<li class="quit">退出</li>
+						<li class="help">帮助</li>
+					</ul>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="desk.html">我的工作台</a></li>
+                        <li><a href="project-manage.html">项目管理</a></li>
+                        <li><a href="#">资源管理</a></li>
+                        <li><a href="#">项目发布</a></li>
+                        <li><a href="#">代码检查</a></li>
+                        <li><a href="#">测试管理</a></li>
+                        <li class="on"><a href="UI-main.html">UI自动化</a></li>
+                        <li><a href="#">性能测试</a></li>
+                    </ul>
+                </div>
+            </div>          
+        </div>        
+        <div class="main ui-automation execute">
+            <div class="left">
+                <div class="left-title">
+                    执行列表
+                    <div class="fr">
+                        <span class="add-executeList" title="添加" onclick="addExecute()"></span>
+                        <span class="edit-executeList" title="修改" onclick="editExecute()"></span>
+                        <span class="delete-executeList" title="删除" onclick="isDelete()"></span>
+                    </div>
+                </div>
+                <div class="left-con">
+                    <div class="class-a">
+                        <a href="#">登录页面</a>
+                    </div>
+                    <div class="class-a">
+                        <a href="#">用户列表</a>                        
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="left-arrow"></div>
+                <div class="right-top">
+                    <div class="right-top-search fr">
+                        <input type="text">
+                        <ul style="display: none;">
+                            <li>JAVA电子政务平台</li>
+                            <li>臻善OA办公平台</li>						
+                            <li>臻善App办公平台</li>
+                            <li>技术管理中心</li>
+                        </ul>
+                    </div>
+                    <div class="right-top-title">执行计划列表</div>
+                </div>
+                <div class="right-con">
+                    <iframe src="iframe/execute.html" id="iframe"></iframe>
+                </div>
+            </div>
+        </div>
+        <div id="reviseInfo" title="个人信息修改">
+            <div class="revise-info">
+                <div class="input-row">
+                    <span class="fl">用户账号</span>
+                    <div>
+                        <input type="text" value="huzf" readonly>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">用户名称</span>
+                    <div>
+                        <input type="text" value="胡芝凤" readonly>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">用户类型</span>
+                    <div>
+                        <input type="text" value="管理员" readonly>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">联系电话</span>
+                    <div>
+                        <input type="text" value="13777465719">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">邮　　箱</span>
+                    <div>
+                        <input type="text" value="">
+                    </div>
+                </div>
+                <div class="input-row head-upload">
+                    <span class="fl">上传头像</span>
+                    <div>
+                        <div id="preview">
+                            <img id="imghead" border="0" src="img/base_head.png" width="100%" onclick="$('#previewImg').click();">
+                        </div>
+                        <input type="file" onchange="previewImage(this)" style="display: none;" id="previewImg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="revisePassWord" title="密码修改">
+            <div class="revise-info">
+                <div class="input-row">
+                    <span class="fl">原密码</span>
+                    <div>
+                        <input type="password" value="" placeholder="请输入原密码">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">新密码</span>
+                    <div>
+                        <input type="password" value="" placeholder="请输入新密码">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <span class="fl">确认密码</span>
+                    <div>
+                        <input type="password" value="" placeholder="确认密码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新增执行计划弹框 start -->
+    <div id="addExecute" title="新增执行计划">
+        <div class="revise-info revise-modify">
+            <div class="input-row">
+                <span class="fl width100"><a class="required">*</a>执行计划名称</span>
+                <div>
+                    <input type="password" value="" placeholder="请输入执行计划名称">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新增执行计划弹框 end -->
+
+    <!-- 修改执行计划弹框 start -->
+    <div id="editExecute" title="修改执行计划">
+        <div class="revise-info revise-modify">
+            <div class="input-row">
+                <span class="fl width100"><a class="required">*</a>执行计划名称</span>
+                <div>
+                    <input type="password" value="" placeholder="V4.1版本自动化测试">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 修改执行计划弹框 end -->
+
+    <!-- 是否删除模块 start -->
+    <div id="isDelete" title="信息">
+        <p>确定删除该执行计划？</p>
+    </div>
+    <!-- 是否删除模块 end -->
+    <div class="alert-con success-info ab">
+        操作成功！
+    </div>
+    <div class="alert-con fail-info ab">
+        操作失败！
+    </div>
+    <div class="alert-con rights-info ab">
+        该用户没有操作权限！
+    </div>
+</body>
+<script>         
+    $(function(){    
+
+        $('#iframe').height($('.right-con').height()-52);
+    })
+    </script>
+    <script src="js/common.js"></script>   
+</html>

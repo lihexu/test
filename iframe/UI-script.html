@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/jquery-ui.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style2.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <script src="../js/jquery.min.js"></script>    
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../js/jquery.ztree.all.min.js"></script>
+</head>
+<style>
+    html,body{
+        height: auto;
+    }
+    body{
+        min-width: auto;
+    }
+    #isDelete p{
+        padding: 40px 0 20px;
+        font-size: 18px;
+        color: #333;
+        text-align: center;
+    }
+    .ui-dialog .ui-dialog-buttonpane button:first-child{
+        margin-left:30px;
+    }
+</style>
+<body>
+<div class="project-page cardScroll">
+    <div class="hd">
+        <a class="next"></a>
+        <ul>
+        </ul>
+        <a class="prev"></a>
+    </div>
+    <div class="bd">
+        <ul class="pro-card-box script-card clearfix">
+            <li>
+                <div class="col-3">
+                    <div class="pro-card" onclick="newTask()">
+                        <div class="pro-card-tit bg3">
+                            新增脚本集
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="add-script bg8"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="pro-card">
+                        <div class="pro-card-tit bg1">
+                            公共脚本集
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="add-script bg8 pub-script"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="pro-card">
+                        <div class="pro-card-tit bg5">
+                            <div class="card-op fr">
+                                <span class="edit"></span>
+                                <span class="add"></span>
+                                <span class="delete"></span>
+                            </div>
+                            <p>JAVA电子政务平台务平台</p>
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="fl">
+                                <span class="color1">1</span>
+                                <p>用例总数</p>
+                            </div>
+                            <div class="fl">
+                                <span class="color2">0</span>
+                                <p>失败数</p>
+                            </div>
+                            <div class="fl">
+                                <span>1</span>
+                                <p>未执行数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="pro-card">
+                        <div class="pro-card-tit bg5">
+                            <div class="card-op fr">
+                                <span class="edit"></span>
+                                <span class="add"></span>
+                                <span class="delete"></span>
+                            </div>
+                            <p>JAVA电子政务平台务平台</p>
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="fl">
+                                <span class="color1">1</span>
+                                <p>用例总数</p>
+                            </div>
+                            <div class="fl">
+                                <span class="color2">0</span>
+                                <p>失败数</p>
+                            </div>
+                            <div class="fl">
+                                <span>1</span>
+                                <p>未执行数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="pro-card">
+                        <div class="pro-card-tit bg5">
+                            <div class="card-op fr">
+                                <span class="edit"></span>
+                                <span class="add"></span>
+                                <span class="delete"></span>
+                            </div>
+                            <p>JAVA电子政务平台务平台</p>
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="fl">
+                                <span class="color1">1</span>
+                                <p>用例总数</p>
+                            </div>
+                            <div class="fl">
+                                <span class="color2">0</span>
+                                <p>失败数</p>
+                            </div>
+                            <div class="fl">
+                                <span>1</span>
+                                <p>未执行数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="pro-card">
+                        <div class="pro-card-tit bg5">
+                            <div class="card-op fr">
+                                <span class="edit"></span>
+                                <span class="add"></span>
+                                <span class="delete"></span>
+                            </div>
+                            <p>JAVA电子政务平台务平台</p>
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="fl">
+                                <span class="color1">1</span>
+                                <p>用例总数</p>
+                            </div>
+                            <div class="fl">
+                                <span class="color2">0</span>
+                                <p>失败数</p>
+                            </div>
+                            <div class="fl">
+                                <span>1</span>
+                                <p>未执行数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="col-3">
+                    <div class="pro-card">
+                        <div class="pro-card-tit bg5">
+                            <div class="card-op fr">
+                                <span class="edit"></span>
+                                <span class="add"></span>
+                                <span class="delete"></span>
+                            </div>
+                            <p>JAVA电子政务平台务平台</p>
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="fl">
+                                <span class="color1">1</span>
+                                <p>用例总数</p>
+                            </div>
+                            <div class="fl">
+                                <span class="color2">0</span>
+                                <p>失败数</p>
+                            </div>
+                            <div class="fl">
+                                <span>1</span>
+                                <p>未执行数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="pro-card">
+                        <div class="pro-card-tit bg5">
+                            <div class="card-op fr">
+                                <span class="edit"></span>
+                                <span class="add"></span>
+                                <span class="delete"></span>
+                            </div>
+                            <p>JAVA电子政务平台务平台</p>
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="fl">
+                                <span class="color1">1</span>
+                                <p>用例总数</p>
+                            </div>
+                            <div class="fl">
+                                <span class="color2">0</span>
+                                <p>失败数</p>
+                            </div>
+                            <div class="fl">
+                                <span>1</span>
+                                <p>未执行数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="pro-card">
+                        <div class="pro-card-tit bg5">
+                            <div class="card-op fr">
+                                <span class="edit"></span>
+                                <span class="add"></span>
+                                <span class="delete"></span>
+                            </div>
+                            <p>JAVA电子政务平台务平台</p>
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="fl">
+                                <span class="color1">1</span>
+                                <p>用例总数</p>
+                            </div>
+                            <div class="fl">
+                                <span class="color2">0</span>
+                                <p>失败数</p>
+                            </div>
+                            <div class="fl">
+                                <span>1</span>
+                                <p>未执行数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="pro-card">
+                        <div class="pro-card-tit bg5">
+                            <div class="card-op fr">
+                                <span class="edit"></span>
+                                <span class="add"></span>
+                                <span class="delete"></span>
+                            </div>
+                            <p>JAVA电子政务平台务平台</p>
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="fl">
+                                <span class="color1">1</span>
+                                <p>用例总数</p>
+                            </div>
+                            <div class="fl">
+                                <span class="color2">0</span>
+                                <p>失败数</p>
+                            </div>
+                            <div class="fl">
+                                <span>1</span>
+                                <p>未执行数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="pro-card">
+                        <div class="pro-card-tit bg5">
+                            <div class="card-op fr">
+                                <span class="edit"></span>
+                                <span class="add"></span>
+                                <span class="delete"></span>
+                            </div>
+                            <p>JAVA电子政务平台务平台</p>
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="fl">
+                                <span class="color1">1</span>
+                                <p>用例总数</p>
+                            </div>
+                            <div class="fl">
+                                <span class="color2">0</span>
+                                <p>失败数</p>
+                            </div>
+                            <div class="fl">
+                                <span>1</span>
+                                <p>未执行数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="pro-card">
+                        <div class="pro-card-tit bg5">
+                            <div class="card-op fr">
+                                <span class="edit"></span>
+                                <span class="add"></span>
+                                <span class="delete"></span>
+                            </div>
+                            <p>JAVA电子政务平台务平台</p>
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="fl">
+                                <span class="color1">1</span>
+                                <p>用例总数</p>
+                            </div>
+                            <div class="fl">
+                                <span class="color2">0</span>
+                                <p>失败数</p>
+                            </div>
+                            <div class="fl">
+                                <span>1</span>
+                                <p>未执行数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="col-3">
+                    <div class="pro-card">
+                        <div class="pro-card-tit bg5">
+                            <div class="card-op fr">
+                                <span class="edit"></span>
+                                <span class="add"></span>
+                                <span class="delete"></span>
+                            </div>
+                            <p>JAVA电子政务平台务平台</p>
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="fl">
+                                <span class="color1">1</span>
+                                <p>用例总数</p>
+                            </div>
+                            <div class="fl">
+                                <span class="color2">0</span>
+                                <p>失败数</p>
+                            </div>
+                            <div class="fl">
+                                <span>1</span>
+                                <p>未执行数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="pro-card">
+                        <div class="pro-card-tit bg5">
+                            <div class="card-op fr">
+                                <span class="edit"></span>
+                                <span class="add"></span>
+                                <span class="delete"></span>
+                            </div>
+                            <p>JAVA电子政务平台务平台</p>
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="fl">
+                                <span class="color1">1</span>
+                                <p>用例总数</p>
+                            </div>
+                            <div class="fl">
+                                <span class="color2">0</span>
+                                <p>失败数</p>
+                            </div>
+                            <div class="fl">
+                                <span>1</span>
+                                <p>未执行数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="pro-card">
+                        <div class="pro-card-tit bg5">
+                            <div class="card-op fr">
+                                <span class="edit"></span>
+                                <span class="add"></span>
+                                <span class="delete"></span>
+                            </div>
+                            <p>JAVA电子政务平台务平台</p>
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="fl">
+                                <span class="color1">1</span>
+                                <p>用例总数</p>
+                            </div>
+                            <div class="fl">
+                                <span class="color2">0</span>
+                                <p>失败数</p>
+                            </div>
+                            <div class="fl">
+                                <span>1</span>
+                                <p>未执行数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="pro-card">
+                        <div class="pro-card-tit bg5">
+                            <div class="card-op fr">
+                                <span class="edit"></span>
+                                <span class="add"></span>
+                                <span class="delete"></span>
+                            </div>
+                            <p>JAVA电子政务平台务平台</p>
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="fl">
+                                <span class="color1">1</span>
+                                <p>用例总数</p>
+                            </div>
+                            <div class="fl">
+                                <span class="color2">0</span>
+                                <p>失败数</p>
+                            </div>
+                            <div class="fl">
+                                <span>1</span>
+                                <p>未执行数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="pro-card">
+                        <div class="pro-card-tit bg5">
+                            <div class="card-op fr">
+                                <span class="edit"></span>
+                                <span class="add"></span>
+                                <span class="delete"></span>
+                            </div>
+                            <p>JAVA电子政务平台务平台</p>
+                        </div>
+                        <div class="pro-card-con">
+                            <div class="fl">
+                                <span class="color1">1</span>
+                                <p>用例总数</p>
+                            </div>
+                            <div class="fl">
+                                <span class="color2">0</span>
+                                <p>失败数</p>
+                            </div>
+                            <div class="fl">
+                                <span>1</span>
+                                <p>未执行数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="newTask" title="新建任务">
+    <div class="revise-info">
+        <div class="input-row">
+            <span class="fl"><a class="required">*</a>任务名称</span>
+            <div>
+                <input type="text" value="" placeholder="请输入任务名称">
+            </div>
+        </div>
+        <div class="input-row rl">
+            <span class="fl">成　　员</span>
+            <div class="con-div">
+                <span class="example-text">请选择开发人员</span>
+            </div>
+            <a class="ab add-icon" onclick="addPerson(this)"></a>
+        </div>
+
+        <div class="input-row">
+            <span class="fl">项目名称</span>
+            <div>
+                <select>
+                    <option value="">请选择</option>
+                    <option value="0">JAVA电子政务平台务平台</option>
+                    <option value="1">JAVA电子政务平台务平台</option>
+                    <option value="2">JAVA电子政务平台务平台</option>
+                </select>
+            </div>
+        </div>
+        <div class="input-row">
+            <span class="fl">版本名称</span>
+            <div>
+                <select>
+                    <option value="">请选择</option>
+                    <option value="0">JAVA电子政务平台务平台</option>
+                    <option value="1">JAVA电子政务平台务平台</option>
+                    <option value="2">JAVA电子政务平台务平台</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="editTask" title="修改任务">
+    <div class="revise-info">
+        <div class="input-row">
+            <span class="fl"><a class="required">*</a>任务名称</span>
+            <div>
+                <input type="text" value="" placeholder="请输入任务名称">
+            </div>
+        </div>
+        <div class="input-row rl">
+            <span class="fl">成　　员</span>
+            <div class="con-div">
+                <span class="example-text">请选择开发人员</span>
+            </div>
+            <a class="ab add-icon" onclick="addPerson(this)"></a>
+        </div>
+
+        <div class="input-row">
+            <span class="fl">项目名称</span>
+            <div>
+                <select>
+                    <option value="">请选择</option>
+                    <option value="0">JAVA电子政务平台务平台</option>
+                    <option value="1">JAVA电子政务平台务平台</option>
+                    <option value="2">JAVA电子政务平台务平台</option>
+                </select>
+            </div>
+        </div>
+        <div class="input-row">
+            <span class="fl">版本名称</span>
+            <div>
+                <select>
+                    <option value="">请选择</option>
+                    <option value="0">JAVA电子政务平台务平台</option>
+                    <option value="1">JAVA电子政务平台务平台</option>
+                    <option value="2">JAVA电子政务平台务平台</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 移交给 start -->
+<div id="transferTo" title="移交给">
+    <div class="revise-info revise-modify">
+        <div class="input-row rl">
+            <span class="fl">成&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;员</span>
+            <div class="con-div">
+                <span class="example-text">请选择成员</span>
+            </div>
+            <a class="ab add-icon" onclick="addPerson(this)"></a>
+            <!-- <div>
+                <input type="password" value="" placeholder="请输入模块名称">
+            </div> -->
+        </div>
+    </div>
+</div>
+<!-- 移交给 end -->
+
+<!-- 删除 start -->
+<div id="isDelete" title="信息">
+    <p>确定删除该任务吗？</p>
+</div>
+<!-- 删除 end -->
+
+<div id="addPerson" title="选择人员">
+    <ul id="treeDemo" class="ztree"></ul>
+</div>
+
+<div class="alert-con success-info ab">
+    操作成功！
+</div>
+<div class="alert-con fail-info ab">
+    操作失败！
+</div>
+<div class="alert-con rights-info ab">
+    该用户没有操作权限！
+</div>
+
+<script src="../js/common.js"></script>
+<!-- 引入树状菜单js -->
+<script src="../js/staffs.js"></script> 
+<script src="../js/section.js"></script>
+
+</body>
+<script>         
+    $(function(){        
+        var cardLi = $('.cardScroll .bd li');
+        for(var i=0;i<cardLi.length;i++){
+            $('.cardScroll .hd ul').append('<li></li>');
+        }
+        jQuery(".cardScroll").slide({mainCell:".bd ul",effect:"fold",trigger:"click",delayTime:0,pnLoop:false});
+        $('.pro-card-box,.pro-card-box li').width('100%');
+
+        $(".add-script").mouseover(function(){
+            $(this).removeClass("bg8").addClass("bg5");
+        }).mouseout(function(){
+            $(this).removeClass("bg5").addClass("bg8");
+        })
+
+        $(".pub-script").click(function(){
+            window.location.href = "public-scriptList.html";
+        })
+        $(".pro-card").mouseover(function(){
+            $(this).find(".card-op").show();
+        }).mouseout(function(){
+            $(this).find(".card-op").hide();
+        })
+
+        $(".edit").click(editTask);
+        $(".add").click(transferTo);
+        $(".delete").click(isDelete);
+
+    })    
+    function editTask() {
+        $('#editTask').dialog('open');
+    }
+    $("#editTask").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: 'auto',
+        width: 580,
+        modal: false,
+        buttons: {
+            "保存": function () {               
+                $(this).dialog("close");
+                successInfo();
+            }
+            ,
+            "取消":function(){
+                $(this).dialog( "close" );
+            }
+        },close:function(){
+            $("#reviseInfo").find(":input").val("");
+        }
+        
+    });
+
+    function newTask() {
+        $('#newTask').dialog('open');
+    }
+    $("#newTask").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: 'auto',
+        width: 580,
+        modal: false,
+        buttons: {
+            "保存": function () {               
+                $(this).dialog("close");
+                window.location.href = "moduleList.html";
+            }
+            ,
+            "取消":function(){
+                $(this).dialog( "close" );
+            }
+        },close:function(){
+            $("#reviseInfo").find(":input").val("");
+            } 
+    });
+    </script>
+
+</html>

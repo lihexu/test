@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/jquery-ui.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style2.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <script src="../js/jquery.min.js"></script>   
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/jquery.ztree.all.min.js"></script>
+</head>
+<style>
+    html,body{
+        height: auto;
+    }
+    body{
+        min-width: auto;
+    }
+</style>
+<body>
+    <div class="project-page project-list bgfff">
+        <div class="info-box">
+            <ul class="info-ul clearfix">
+                <li>
+                    <span class="name-span">版本名称</span>
+                    <div class="con-div">
+                        <input class="ipt"  placeholder="请输入版本名称" />
+                    </div>
+                </li>
+                <li class="department-li">
+                    <span class="name-span">所属部门</span>
+                    <div class="con-div ipt-div">
+                        <input class="ipt"  placeholder="请输入所属部门" />
+                    </div>
+                    <span class="fl select-span  name-span">项目类型</span>
+                    <div class="con-div select-div">
+                        <select>
+                            <option>WEB</option>
+                            <option>Java</option>
+                            <option>Android</option>
+                        </select>
+                    </div>
+                </li>
+                <li class="rl">
+                    <span class="name-span">项目经理</span>
+                    <div class="con-div">
+                        <span class="example-text">请选择项目经理</span>
+                    </div>
+                    <a class="ab add-icon" onclick="addPerson(this)"></a>
+                </li>
+                <li class="rl">
+                    <span class="name-span">开发人员</span>
+                    <div class="con-div">
+                        <span class="example-text">请选择开发人员</span>
+                    </div>
+                    <a class="ab add-icon" onclick="addPerson(this)"></a>
+                </li>
+                <li class="rl">
+                    <span class="name-span">测试人员</span>
+                    <div class="con-div">
+                        <span class="example-text">请选择测试人员</span>
+                    </div>
+                    <a class="ab add-icon" onclick="addPerson(this)"></a>
+                </li>
+                <li class="rl">
+                    <span class="name-span">QA人员</span>
+                    <div class="con-div">
+                        <span class="example-text">请添加QA人员</span>
+                    </div>
+                    <a class="ab add-icon" onclick="addPerson(this)"></a>
+                </li>
+                <li class="date-li">
+                    <span class="start-time name-span">计划开始日期</span>
+                    <div class="con-div">
+                        <input class="ipt datepicker" placeholder="2017-08-01" />
+                    </div>
+                    <span class="publish-time name-span">计划发布日期</span>
+                    <div class="con-div">
+                        <input class="ipt datepicker" placeholder="2017-09-20" />
+                    </div>
+                </li>
+                <li>
+                    <span class="name-span">项目背景</span>
+                    <div class="textarea-con con-div">
+                        <textarea></textarea>
+                    </div>
+                </li>
+            </ul>
+            <div class="btn-con">
+                <span class="fl save">保存</span>
+                <span class="fr back">返回</span>
+            </div>
+        </div>
+    </div>
+    <div id="addPerson" title="选择人员">
+        <ul id="treeDemo" class="ztree"></ul>
+    </div>
+    <div class="alert-con success-info ab">
+        操作成功！
+    </div>
+    <div class="alert-con fail-info ab">
+        操作失败！
+    </div>
+    <div class="alert-con rights-info ab">
+        该用户没有操作权限！
+    </div>
+      
+    <!-- 引入树状菜单js -->
+    <script src="../js/staffs.js"></script> 
+    <script src="../js/section.js"></script>
+    <script>
+        $(".save").click(function(){
+            window.location.href = "version-list.html";
+            $(".right-top-title",parent.document).text("版本列表");
+            $(".page-con",parent.document).show();
+        })
+
+        // 时间选择器
+        $( ".datepicker" ).datepicker({
+            showOn: "button",
+            buttonImage: "../img/time.png",
+            buttonImageOnly: true,
+            buttonText:"选择时间"
+        });
+    </script>
+</body>
+
+</html>

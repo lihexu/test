@@ -1,0 +1,651 @@
+
+ 
+input, select,textarea {
+    padding:0;
+    margin:0;
+    border:none;
+    outline:none;
+    vertical-align:middle;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.ab{
+    position:absolute;
+}
+.rl{
+    position:relative;
+}
+.overflow-h{
+    overflow:hidden;
+}
+/*css为clearfix，清除浮动*/
+.clearfix::before,
+.clearfix::after{
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.clearfix:after{
+    clear:both;
+} 
+.clearfix{ 
+    *zoom:1;/*IE/7/6*/
+}
+.cl{
+    clear:both;
+}
+/*************项目管理样式 start **************/
+
+/*.my-project .modify-a a{
+    background-image:url(../img/project_menu2.png);
+}*/
+.project .right-con{
+    border:1px solid #e4e4e4;
+    background: #fff;
+}
+.my-project .new-a>a,.my-project .list-a>a,.my-project .detail-a>a{
+    background-image:url(../img/project_menu2.png);
+}
+.left-con .new-a>a{
+    background-position:22px -32px;
+}
+.left-con .list-a>a{
+    background-position:21px -78px;
+}
+.left-con .detail-a>a{
+    background-position:22px -124px;
+}
+
+.right-top .info-title{
+    background:url(../img/info-title.png) 20px center no-repeat;
+}
+.info-ul{
+    width:520px;
+    margin:0 auto;
+}
+.info-ul li{
+    font-size:16px;
+    overflow:hidden;
+    margin-bottom:16px;
+}
+.info-ul .name-span{
+    float:left;
+    width:106px;
+    padding-right:10px;
+    text-align:right;
+    line-height:36px;
+    font-size:13px;
+}
+.info-ul .con-div{
+    float:left;
+    width:362px;
+    padding:0 30px 0 10px;
+    line-height:34px;
+    min-height:34px;
+    border:1px solid #e5e5e5;
+}
+.con-div span,.ipt-con span{
+    float:left;
+    line-height:24px;
+    margin:5px 8px 5px 0;
+    display:inline-block;
+}
+
+.info-ul .ipt{
+    width:100%;
+    height:34px;
+    float:left;
+    font-size:13px;
+    background-color:none;
+}
+
+.department-li .ipt-div{
+    width:168px;
+    padding-right:10px;
+}
+.department-li .select-span{
+    width:84px;
+}
+.department-li .select-div{
+    width:113px;
+    padding:0;
+    padding-right:5px;
+}
+.select-div select{
+    width:118px;
+    padding:0 10px 0 5px;
+    font-size:16px;
+}
+
+.info-ul .type-div{
+    width:392px;
+    padding-right:0;
+}
+.type-div select{
+    width:100%;
+}
+
+.info-ul .date-li{
+    width:550px;
+}
+.date-li div{
+    width:124px !important;
+    padding-right:0 !important;
+}
+.date-li img{
+    cursor:pointer;
+}
+.date-li .ipt{
+    width:98px;
+}
+.date-li .start-time{
+    width:106px;
+}
+.date-li .publish-time{
+    width:122px;
+}
+.info-ul .textarea-con{
+    width:382px;
+    height:60px;
+    padding:10px 10px;
+}
+.textarea-con textarea{
+    width:100%;
+    height:60px;
+    resize:none;
+}
+
+.input-row .con-div{
+    border:1px solid #e0e0e0;
+    padding-left:13px;
+}
+
+li .example-text{
+    color:#757575;
+}
+.project-info .ui-datepicker{
+    border:1px solid #c5c5c5;
+}
+.project-info .ui-dialog{
+    border:none;
+}
+
+.add-span{
+    position:relative;
+    padding-right:20px;
+}
+
+.del-icon{
+    position:absolute;
+    width:16px;
+    height:16px;
+    right:0;
+    top:4px;
+    cursor:pointer;
+    background:url(../img/del-icon.png) no-repeat right center;
+}
+.del-icon:hover{
+    background:url(../img/del-hov.png) no-repeat center;
+}
+
+.rl .depart-icon{
+    background:url(../img/depart.png) no-repeat center #fff;
+}
+
+.btn-con{
+    width:216px;
+    margin:0 auto;
+    overflow:hidden;
+}
+.btn-con span{
+    width:86px;
+    cursor:pointer;
+    padding-left:10px;
+    line-height:36px;
+    text-align:center;
+    border-radius:4px;
+    border:1px solid #e5e5e5;
+}
+.btn-con span:hover{
+    color:#fff;
+    background-color:#1abc9c;
+}
+.btn-con .save{
+    color:#fff;
+    background:url(../img/save.png) no-repeat 18px center #1abc9c;
+}
+.btn-con .save:hover{
+    background-color:#00af8d;
+}
+.btn-con .back{
+    background:url(../img/back.png) no-repeat 18px center #fff;
+}
+.btn-con .back:hover{
+    background:url(../img/back-hov.png) no-repeat 18px center #1abc9c;
+}
+
+/*************项目管理样式 end **************/
+
+
+/*************项目列表部分 start **************/
+.query-con{
+    /*width:600px;
+    height:30px;
+    border:1px solid #ccc;*/
+}
+.query-con span{
+
+}
+.query-con .name-span{
+    width:auto;
+}
+.query-con .ipt{
+    width:250px;
+    padding:0 5px;
+    border:1px solid #e5e5e5;
+    border-right:none;
+}
+.query-btn{
+    height:36px;
+    width:50px;
+    color:#fff;
+    line-height:36px;
+    text-align:center;
+    cursor:pointer;
+    padding-left:20px;
+    border-top-right-radius:4px;
+    border-bottom-right-radius:4px;
+    background:url(../img/query-icon.png) no-repeat 10px center #e67e22;
+}
+.query-btn:hover{
+    background-color:#f0892d;
+}
+.more{
+    width:20px;
+    height:20px;
+    margin-top:8px;
+    margin-left:10px;
+    font-size:16px;
+    color:#999;
+    cursor:pointer;
+    background:url(../img/more-icon.png) no-repeat center #fff;
+}
+.query-con .click{
+    background:url(../img/more-icon2.png) no-repeat center #fff;
+}
+.more-table{
+    width:100%;
+    border-collapse: collapse;
+}
+.more-table td{
+    height:36px;
+    line-height:36px;
+    /*border:1px solid red;*/
+    text-align:right;
+}
+.more-table .ipt-con{
+    height:34px;
+    line-height:34px;
+    padding:0 5px;
+    border:1px solid #e5e5e5;
+}
+.more-table .depart-con{
+    width:100%;
+    margin-bottom:-13px;
+}
+.ipt-con input{
+    width:100%;
+    height:32px;
+    line-height:32px;
+    margin-top:-2px;
+}
+.name-td{
+    width:66px;
+}
+.name-td2{
+    width:84px;
+}
+.span-tit{
+    padding-right:10px;
+}
+.more-table .tit-td{
+    width:76px;
+}
+.more-table .tit-td2{
+    width:104px;
+}
+.ipt-con .example-text{
+    
+}
+.more-table .depart-td{
+    min-width:140px;
+}
+.more-table .date-td{
+    width:200px;
+}
+.date-td .ipt-con input{
+    width:90%;
+}
+.ipt-con img{
+    cursor:pointer;
+}
+.ipt-con .del-icon{
+    /*top:2px;*/
+}
+.more-table .bbv{
+    width:226px;
+}
+
+.mt20{
+    margin-top:20px;
+}
+.ui-datepicker{
+    border:1px solid #c5c5c5 !important;
+}
+
+
+.add-list{
+    padding:0 20px;
+}
+.add-list .list-btn{
+    color:#fff;
+    width:76px;
+    height:36px;
+    cursor:pointer;
+    line-height:36px;
+    padding-left:32px;
+    border-radius:3px;
+    background: url(../img/add-list.png) 10px center no-repeat #1abc9c;
+}
+
+.add-list .list-btn:hover{
+    background-color:#00af8d;
+}
+.table-con{
+    padding:15px 20px;
+}
+.table-con table{
+    width:100%;
+}
+.table-con td,.table-con th{
+    line-height:40px;
+    text-align:center;
+}
+.table-con th{
+    background-color:#ededed;
+}
+.table-con td{
+    border-bottom:2px solid #f2f2f2;
+}
+.table-con thead tr{
+    color:#333;
+}
+.table-con tbody tr{
+    color:#666;
+}
+
+.table-con tbody tr:hover{
+    color:#f60;
+}
+.nowrap{
+    height:40px;
+    padding:0 5px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.width180{
+    width:180px;
+}
+.width140{
+    width:130px;
+}
+.create,.apply,.develop,.test,.complete{
+    cursor:pointer;
+}
+.create{
+    color:#e60012;
+}
+.apply{
+    color:#ff6600;
+}
+.develop{
+    color:#3498db;
+}
+.test{
+    color:#22ac38;
+}
+.complete{
+    color:#172a88;
+}
+.resource{
+    display:block;
+    width:68px;
+    cursor:pointer;
+    margin:0 auto;
+    color:#1abc9c;
+    line-height:22px;
+    border-radius:4px;
+    border:1px solid #ebebeb;
+}
+.resource:hover{
+    background-color:#1abc9c;
+    color:#fff;
+}
+.color3:hover{
+    background-color:transparent;
+    color:#a6a6a6;
+}
+
+/*************项目列表部分 end **************/
+
+/*************项目详情部分 start **************/
+.project-list{
+    padding: 20px 20px 0 20px;
+    font-size:13px;
+}
+.project-process{
+    padding:0 40px 20px;
+}
+.process-li{
+    height:2px;
+    margin:50px 0 40px;
+    background-color:#ededed;
+}
+.process-li2{
+    height:2px;
+    /*left:0;*/
+    top:0;
+    width:46%;
+    background-color:#f6a91e;
+}
+.process-li span{
+    width:48px;
+    padding-top:58px;
+    top:-24px;
+    text-align:center;
+    z-index:99;
+}
+.process-li .ab-new{
+    left:0;
+    background:url(../img/ab-new.png) no-repeat left top;
+}
+.process-li .ab-apply{
+    left:25%;
+    margin-left:-24px;
+    background:url(../img/ab-apply.png) no-repeat left top;
+}
+.process-li .ab-deve{
+    width:58px;
+    left:50%;
+    margin-left:-29px;
+    background:url(../img/ab-deve.png) no-repeat center top;
+}
+.process-li .ab-test{
+    width:58px;
+    left:75%;
+    margin-left:-29px;
+    background:url(../img/ab-test.png) no-repeat center top;
+}
+.process-li .ab-compl{
+    width:58px;
+    right:0;
+    background:url(../img/ab-comple.png) no-repeat right top;
+}
+.process-li .current{
+    width:66px;
+    margin-left:-33px;
+    font-size:16px;
+    color:#f60;
+}
+
+
+.ml10{
+    margin-left:10px;
+}
+.ml26{
+    margin-left:26px;
+}
+.ml40{
+    margin-left:40px;
+}
+.ml80{
+    margin-left:80px;
+}
+.align-r{
+    text-align:right;
+}
+.text-li .current-step{
+    font-size:16px;
+    color:#f60;
+}
+.list-block{
+    margin-bottom:10px;
+}
+.project-p{
+    line-height:34px;
+    padding-left:15px;
+    font-size:14px;
+    background-color:#ededed;
+    border-left:4px solid #e67e22;
+}
+.open-icon,.edit-icon{
+    width:16px;
+    height:16px;
+    cursor:pointer;
+    margin-top:9px;
+    margin-right:10px;
+    background:url(../img/open.png) no-repeat center;
+}
+.project-p .close-icon{
+    background:url(../img/close.png) no-repeat center;
+}
+.project-p .edit-icon{
+    background:url(../img/edit.png) no-repeat center;
+}
+.project-p .modify,.project-p .mass{
+    width:66px;
+    color:#fff;
+    line-height:24px;
+    border-radius:2px;
+    margin-top:5px;
+    font-size:13px;
+    margin-right:10px;
+    text-align:center;
+    cursor:pointer;
+}
+.mass{
+    background-color:#1abc9c;
+}
+.modify{
+    background-color:#e67e22;
+}
+
+.project-msg,.project-develop{
+    padding:12px 19px 0;
+}
+.project-msg li{
+    float:left;
+    width:50%;
+    line-height:26px;
+}
+
+.project-develop li{
+    line-height:26px;
+    margin:10px 0 20px;
+}
+.project-develop li span{
+    line-height:16px;
+}
+.config-span{
+    width:45px;
+    text-align:center;
+    color:#53cdb5;
+    font-size:12px;
+    margin-left:10px;
+    border:2px solid #53cdb5;
+}
+.status-span{
+    margin-left:50px;
+}
+.project-develop .operate-list,.project-develop .compile-span,.project-develop .operate-span{
+    width:56px;
+    height:20px;
+    color:#fff;
+    line-height:20px;
+    font-size:12px;
+    cursor:pointer;
+    text-align:center;
+    background-color:#53cdb5;
+
+}
+.project-develop .operate-span{
+    width:46px;
+    padding-right:10px;
+    background:url(../img/operate-icon.png) no-repeat 42px center #53cdb5;
+}
+.project-develop .click{
+    background:url(../img/operate-icon2.png) no-repeat 42px center #53cdb5;
+}
+.project-develop .operate-list{
+    width:54px;
+    color:#53cdb5;
+    background-color:#fff;
+    border:1px solid #ededed;
+    border-top:none;
+}
+.project-develop .operate-list:hover{
+    color:#fff;
+    background-color:#53cdb5;
+    border:1px solid #53cdb5;
+    border-top:none;
+}
+.compile-span{
+    margin-right:10px;
+}
+.operate-ul{
+    top:20px;
+    right:0;
+    z-index:99;
+    display:none;
+}
+.operate-ul li{
+    margin:0;
+}
+.fail{
+    color:#f00;
+}
+.slide-ul{
+    
+}
+/*************项目详情部分 end **************/
+
+.ui-widget-overlay{
+    opacity:0.2!important;
+}

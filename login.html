@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="login-html">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.SuperSlide.2.1.1.js"></script>
+</head>
+
+<body>
+    <div class="login-containter">
+        <div class="login-head">
+            <div class="login-head-center">
+                <div class="logo fl">软件交付服务云平台
+                    <p>SOFTWARE DELIVERY SERVICES CLOUD PLATFORM</p>
+                </div>
+            </div>
+        </div>
+        <div class="login-con">
+            <div class="carousel slideBox">
+                <div class="hd">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="bd">
+                    <ul class="carousel-list">
+                        <li style="background:url(img/login_c1.jpg) center no-repeat,url(img/login_c1_bg.png) left center repeat-x;display:block;"></li>
+                        <li style="background:url(img/login_c2.png) center no-repeat #22bdf4;"></li>
+                        <li style="background:url(img/login_c1.jpg) center no-repeat,url(img/login_c1_bg.png) left center repeat-x;"></li>
+                        <li style="background:url(img/login_c1.jpg) center no-repeat,url(img/login_c1_bg.png) left center repeat-x;"></li>
+                    </ul>
+                </div>
+            </div>
+            <script>
+                jQuery(".slideBox").slide({
+                    mainCell: ".bd ul",
+                    effect: "fold",
+                    easing: "linear",
+                    delayTime: 500,
+                    mouseOverStop: false,
+                    autoPlay: true
+                });
+            </script>
+            <div class="login-center">
+                <div class="login-box">
+                    <div class="login-form">
+                        <input type="text" class="login-name" placeholder="用户名">
+                        <input type="password" class="login-password" placeholder="密码">
+                        <label for="check">
+                                <input type="checkbox" id="check">
+                                <span></span>
+                                记住密码
+                            </label>
+                        <button type="submit" onclick="location='desk.html'">立即登录</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="login-foot">
+            <p>版权所有 &copy; 2013-2016　浙江臻善科技有限公司　All Rights Reserved</p>
+        </div>
+    </div>
+</body>
+<script>
+    $(function() {
+        $('.carousel-list,.carousel-list li').width('100%');
+    })
+</script>
+
+</html>
